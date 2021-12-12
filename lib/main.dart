@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
       theme: ThemeData.dark(),
+      home: const HomePage(),
     );
   }
 }
@@ -33,71 +33,79 @@ class _HomePageState extends State<HomePage> {
       body: Row(
         children: [
           NavigationRail(
-            minWidth: 60,
-            trailing: const Padding(
-              padding: EdgeInsets.only(top: 30.0),
-              child: CircleAvatar(),
+            selectedLabelTextStyle: TextStyle(
+              decoration: TextDecoration.underline,
+            ),
+            trailing: Padding(
+              padding: const EdgeInsets.only(top: 30.0),
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                ),
+              ),
             ),
             labelType: NavigationRailLabelType.all,
-            selectedLabelTextStyle:
-                const TextStyle(decoration: TextDecoration.underline),
             selectedIndex: _selectedIndex,
             onDestinationSelected: (index) {
               setState(() {
                 _selectedIndex = index;
               });
             },
-            destinations: const [
+            destinations: [
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 1'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 1'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 2'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 2'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 3'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 3'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 4'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 4'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 5'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 5'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 6'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 6'),
+                ),
+              ),
               NavigationRailDestination(
-                  label: RotatedBox(
-                    quarterTurns: 3,
-                    child: Text('Page 7'),
-                  ),
-                  icon: Icon(null)),
+                icon: const Icon(null),
+                label: RotatedBox(
+                  quarterTurns: 3,
+                  child: Text('Page 7'),
+                ),
+              ),
             ],
           ),
           Text(
-            'Selected Index: ${_selectedIndex + 1}',
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w600,
-            ),
+            '  Slected Index: ${_selectedIndex + 1}',
+            style: TextStyle(fontSize: 35),
           ),
         ],
       ),
